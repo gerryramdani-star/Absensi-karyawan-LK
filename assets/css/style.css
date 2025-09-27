@@ -1,0 +1,440 @@
+/* Reset & General Styling */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc; /* Warna latar sedikit lebih cerah */
+    margin: 0;
+    padding: 0;
+    color: #334155; /* Warna teks lebih lembut */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- WARNA BARU DISESUAIKAN DENGAN LOGO --- */
+:root {
+    --primary-blue: #2563EB;
+    --primary-blue-dark: #1D4ED8;
+    --accent-orange: #F97316;
+    --accent-red: #EF4444;
+    --accent-green: #16A34A;
+}
+
+/* Login Page Styling */
+.login-page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.login-hero {
+    flex-basis: 50%;
+    background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 100%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.hero-content p {
+    font-size: 18px;
+    color: #dbeafe;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.login-form-container {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fafc;
+}
+.login-form {
+    width: 100%;
+    max-width: 380px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+.login-form h2 {
+    text-align: left;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.login-form .form-subtitle {
+    text-align: left;
+    margin-bottom: 30px;
+    color: #64748b;
+}
+@media (max-width: 800px) {
+    .login-hero { display: none; }
+    .login-form-container { flex-basis: 100%; }
+}
+
+/* Main Dashboard Layout */
+.dashboard-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.sidebar-header {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #ffffff;
+}
+.sidebar-logo {
+    max-width: 150px;
+    height: auto;
+}
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 15px;
+    margin: 0;
+    flex-grow: 1;
+}
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    color: #475569;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.sidebar-menu li.active a, .sidebar-menu li a:hover {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+}
+.sidebar-menu li a span {
+    margin-left: 12px;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+.header-title h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+}
+.header-title p {
+    margin: 5px 0 0;
+    color: #64748b;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.logout-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    padding: 5px;
+    border-radius: 8px;
+}
+.logout-icon svg {
+    width: 24px;
+    height: 24px;
+    transition: color 0.2s ease;
+}
+.logout-icon:hover {
+    color: var(--accent-red);
+    background-color: #fee2e2;
+}
+
+/* Content Wrapper & Cards */
+.content-wrapper {
+    padding: 30px;
+    flex-grow: 1;
+}
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.05);
+}
+.card h4 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+.card-full { grid-column: 1 / -1; }
+
+/* Dashboard Layout & Widgets */
+.dashboard-container-new { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
+.card-main-action { display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 100%); color: white; }
+.main-action-content h4 { color: white; border: none; padding-bottom: 0; margin-bottom: 10px; }
+.main-action-content p { font-size: 16px; color: #dbeafe; margin-bottom: 25px; }
+.main-action-clock .jam { font-size: 48px; font-weight: 700; }
+.main-action-clock .tanggal { font-size: 16px; color: #dbeafe; }
+.whos-in-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+.whos-in-avatar { width: 35px; height: 35px; border-radius: 50%; background-color: #e2e8f0; color: var(--primary-blue); display: flex; justify-content: center; align-items: center; font-weight: bold; flex-shrink: 0; }
+.your-activity { display: flex; flex-direction: column; gap: 15px; }
+.activity-item { display: flex; justify-content: space-between; align-items: center; font-size: 16px; }
+.text-success { color: var(--accent-green); }
+.text-muted { color: #94a3b8; }
+.akumulasi-jam { text-align: center; padding: 20px 0; font-size: 28px; font-weight: 700; color: var(--primary-blue); }
+.akumulasi-jam span { font-size: 16px; font-weight: 500; color: #475569; }
+.attendance-chart-container { display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; }
+.attendance-chart { --percentage: 0; --size: 120px; --border: 12px; width: var(--size); height: var(--size); border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--accent-green) calc(var(--percentage) * 1%), #e2e8f0 0); position: relative; margin: 10px 0; }
+.attendance-chart::before { content: ''; position: absolute; width: calc(100% - var(--border) * 2); height: calc(100% - var(--border) * 2); background: #fff; border-radius: 50%; }
+.attendance-chart span { position: relative; font-size: 24px; font-weight: 700; color: var(--primary-blue); }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+.dot-success { background-color: var(--accent-green); }
+.dot-danger { background-color: var(--accent-red); }
+.new-hires-list { list-style: none; padding: 0; margin: 0; max-height: 150px; overflow-y: auto; }
+.new-hires-list li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+.new-hires-list li:last-child { border-bottom: none; }
+.empty-state { color: #64748b; text-align: center; padding: 20px 0; }
+
+/* Table Styling */
+.table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 20px; }
+.table-header h4 { margin: 0; border: none; padding: 0; }
+.table-controls { display: flex; align-items: center; gap: 15px; }
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th, .data-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+.data-table th { background-color: #f8fafc; font-weight: 600; color: #475569; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+.data-table td { font-size: 15px; color: #334155; }
+.data-table tbody tr:hover { background-color: #f8fafc; }
+
+/* Form & Button Styling */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #334155; }
+.form-group input, .form-group select, .form-group textarea, .search-bar { width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-family: inherit; font-size: 15px; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus, .search-bar:focus { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); outline: none; }
+.btn { width: 100%; padding: 14px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; color: white; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.btn-tambah { display: inline-block; width: auto; padding: 12px 18px; background-color: var(--primary-blue); margin-bottom: 0; font-weight: 500; }
+.btn-aksi { padding: 6px 12px; border-radius: 6px; font-size: 13px; margin-right: 5px; font-weight: 500; }
+.btn-edit { background-color: var(--accent-orange); }
+.btn-hapus { background-color: var(--accent-red); }
+.btn-masuk { background-color: var(--accent-green); }
+.btn-pulang { background-color: #f59e0b; }
+.btn-wfh { background-color: #6d28d9; }
+.main-action-form .button-group { display: flex; gap: 15px; }
+
+/* Badges, Pagination & Misc */
+.badge { padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+.badge-kantor { background-color: #dbeafe; color: var(--primary-blue); }
+.badge-wfh { background-color: #e5e5ff; color: #4338ca; }
+.badge-pending { background-color: #fef9c3; color: #a16207; }
+.badge-approved { background-color: #dcfce7; color: var(--accent-green); }
+.badge-rejected { background-color: #fee2e2; color: var(--accent-red); }
+.belum-absen { color: #94a3b8; font-style: italic; }
+.pagination { display: flex; justify-content: flex-end; margin-top: 25px; gap: 5px; }
+.pagination a { color: var(--primary-blue); padding: 8px 14px; text-decoration: none; border: 1px solid #e2e8f0; border-radius: 8px; transition: background-color 0.2s, color 0.2s; font-weight: 500; }
+.pagination a.active, .pagination a:hover { background-color: var(--primary-blue); color: white; border-color: var(--primary-blue); }
+.message { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: 500; }
+.message.error { background-color: #fee2e2; color: #b91c1c; }
+.message.success { background-color: #dcfce7; color: #15803d; }
+.report-controls { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 25px; flex-wrap: wrap; gap: 20px; }
+.filter-form { display: flex; gap: 15px; align-items: flex-end; }
+.filter-form .form-group { margin-bottom: 0; }
+.filter-form .btn { width: auto; padding: 12px 18px; background-color: var(--primary-blue); }
+.btn-export { background-color: var(--accent-green); width: auto; padding: 12px 18px; font-weight: 500; }
+
+/* Profile Page */
+.profile-card { display: flex; gap: 0; padding: 0; overflow: hidden; }
+.profile-sidebar { flex-basis: 300px; background-color: #f8fafc; border-right: 1px solid #e2e8f0; padding: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+.profile-avatar { width: 120px; height: 120px; border-radius: 50%; background-color: var(--primary-blue); color: #ffffff; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 56px; margin-bottom: 20px; }
+.profile-content { flex-grow: 1; padding: 30px 40px; }
+.profile-tabs { display: flex; border-bottom: 1px solid #e2e8f0; margin-bottom: 30px; }
+.tab-link { border: none; background: none; padding: 15px 20px; cursor: pointer; font-size: 16px; font-weight: 500; color: #64748b; position: relative; border-bottom: 3px solid transparent; transition: color 0.2s ease; }
+.tab-link.active, .tab-link:hover { color: var(--primary-blue); }
+.tab-link.active { border-bottom: 3px solid var(--primary-blue); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.profile-content input[readonly] { background-color: #f1f5f9; cursor: not-allowed; border-color: #e2e8f0; }
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .dashboard-container-new { grid-template-columns: 1fr; }
+}
+/* Tambahkan di akhir file style.css */
+
+/* Badge untuk Status Masuk */
+.badge-tepat-waktu {
+    background-color: #dcfce7; /* Hijau muda */
+    color: #15803d; /* Hijau tua */
+}
+
+.badge-telat {
+    background-color: #fef9c3; /* Kuning muda */
+    color: #a16207; /* Kuning tua */
+}
+/* Tambahkan di akhir file style.css */
+
+/* Gaya untuk tombol yang disabled */
+.btn:disabled {
+    background-color: #94a3b8; /* Warna abu-abu */
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+.btn:disabled:hover {
+    background-color: #94a3b8;
+}
+
+/* Pesan tunggu absen */
+.info-absen-tunggu {
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 15px;
+    width: 100%;
+}
+/* Badge untuk Tipe Pengajuan Cuti/Izin/Sakit */
+.badge-cuti {
+    background-color: #fef3c7; /* Kuning */
+    color: #92400e;
+}
+.badge-izin {
+    background-color: #e0e7ff; /* Lavender */
+    color: #4338ca;
+}
+.badge-sakit {
+    background-color: #fee2e2; /* Merah muda */
+    color: #b91c1c;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #64748b;
+}
+/* Styling untuk Modal/Popup WFA */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* ... (seluruh kode CSS Anda yang sudah ada) ... */
+
+/* TAMBAHKAN KODE INI DI AKHIR */
+
+.btn-cuti { 
+    background-color: #f59e0b; /* Oranye */
+}
+.btn-sakit { 
+    background-color: #ef4444; /* Merah */
+}
+.btn-izin { 
+    background-color: #6366f1; /* Indigo */
+}
+
+/* Badge untuk Tipe Absen di Tabel */
+.badge-wfa {
+    background-color: #e5e5ff; 
+    color: #4338ca;
+}
+.badge-sakit {
+    background-color: #fee2e2; 
+    color: #b91c1c;
+}
+.badge-izin {
+    background-color: #e0e7ff; 
+    color: #4338ca;
+}
+.badge-cuti {
+    background-color: #fef3c7; 
+    color: #92400e;
+}
+/* Warna Tombol Status di Dashboard */
+.btn-wfa {
+    background-color: #6d28d9; /* Ungu Tua */
+}
+
+.btn-izin {
+    background-color: #6366f1; /* Indigo */
+}
+
+.btn-sakit {
+    background-color: #ef4444; /* Merah */
+}
+
+.btn-cuti {
+    background-color: #f59e0b; /* Oranye/Kuning Tua */
+}
